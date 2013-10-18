@@ -1,2 +1,2 @@
-* -text
-packages/* text=auto eol=lf
+* text=auto
+*.sln text eol=crlf
