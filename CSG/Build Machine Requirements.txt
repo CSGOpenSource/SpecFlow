@@ -1,0 +1,3 @@
+1. Visual Studio 2012
+2. Visual studio SDK 2010 (http://www.microsoft.com/en-us/download/details.aspx?id=2680)
+3. Visual Studio SDK 2012 (http://www.microsoft.com/en-us/download/details.aspx?id=30668)
