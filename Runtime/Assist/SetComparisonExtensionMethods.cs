@@ -10,10 +10,10 @@ namespace TechTalk.SpecFlow.Assist
             checker.CompareToSet(set);
         }
 
-        public static void CompareToSubSet<T>(this Table table, IEnumerable<T> set)
+        public static void CompareToSuperSet<T>(this Table table, IEnumerable<T> superSet)
         {
             var checker = new SetComparer<T>(table);
-            checker.CompareToSet(set);
+            checker.CompareToSuperSet(superSet);
         }
     }
 }
