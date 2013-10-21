@@ -17,6 +17,7 @@ _ReSharper*/
 *.gpState
 *.dotCover
 test-results
+*.DotSettings
 
 *.docstates
 Tests/TechTalk.SpecFlow.Specs.Silverlight4.Web/ClientBin/*
