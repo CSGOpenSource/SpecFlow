@@ -48,9 +48,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TechTalk.SpecFlow">
-      <HintPath>..\..\packages\SpecFlow.1.7.1\lib\net35\TechTalk.SpecFlow.dll</HintPath>
-    </Reference>
     <Reference Include="xunit">
       <HintPath>..\..\packages\xunit.1.8.0.1549\lib\xunit.dll</HintPath>
     </Reference>
@@ -73,6 +70,19 @@
       <DependentUpon>MbUnitSmokeTests.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\ReusableScenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReusableScenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ReusableScenario.feature.custom.cs">
+      <DependentUpon>ReusableScenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ReusableScenarioTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReusableScenarioTests.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Tracing.feature.cs">
       <AutoGen>True</AutoGen>
@@ -106,6 +116,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\GeneratorSteps.cs" />
+    <Compile Include="StepDefinitions\ReusableScenarioSteps.cs" />
     <Compile Include="StepDefinitions\TestFileSteps.cs" />
     <Compile Include="TestFiles\TestFileManager.cs" />
   </ItemGroup>
@@ -122,6 +133,14 @@
     <None Include="Features\MbUnitSmokeTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MbUnitSmokeTests1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ReusableScenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReusableScenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ReusableScenarioTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReusableScenarioTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Tracing.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -240,17 +259,21 @@
     <EmbeddedResource Include="TestFiles\whitespaces.feature.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Parser\TechTalk.SpecFlow.Parser.csproj">
-      <Project>{7CCEF6D6-FC17-422E-9BED-EDD752B6496F}</Project>
-      <Name>TechTalk.SpecFlow.Parser</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TechTalk.SpecFlow.Specs\TechTalk.SpecFlow.Specs.csproj">
-      <Project>{ADED3F39-1742-42E2-A55A-3043AC84BDAD}</Project>
-      <Name>TechTalk.SpecFlow.Specs</Name>
-    </ProjectReference>
+    <Folder Include="Drivers\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Drivers\" />
+    <ProjectReference Include="..\..\Parser\TechTalk.SpecFlow.Parser.csproj">
+      <Project>{7ccef6d6-fc17-422e-9bed-edd752b6496f}</Project>
+      <Name>TechTalk.SpecFlow.Parser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Runtime\TechTalk.SpecFlow.csproj">
+      <Project>{413ee28c-4f89-4c6f-ba1e-2cdee4cd43b4}</Project>
+      <Name>TechTalk.SpecFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechTalk.SpecFlow.Specs\TechTalk.SpecFlow.Specs.csproj">
+      <Project>{aded3f39-1742-42e2-a55a-3043ac84bdad}</Project>
+      <Name>TechTalk.SpecFlow.Specs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
