@@ -8,5 +8,5 @@ using System.Reflection;
 [assembly: AssemblyDescription("SpecFlow VS2010 and VS2012 integration library")]
 [assembly: AssemblyConfiguration("")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.9.0.77")]
+[assembly: AssemblyFileVersion("1.9.0.77")]
